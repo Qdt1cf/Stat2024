@@ -1,0 +1,337 @@
+\section{Théorèmes de convergence et approximations de loi}
+\subsection{Inégalité de Bienaymé-Tchebychev}
+		
+\begin{proposition}{Inégalité de Markov}{}
+			Soit $X$ une variable aléatoire \trouer{positive} presque partout sur un espace probabilisé $(\Omega,\mathcal{E},\prob)$. Alors pour tout $\lambda >0$, 
+			$$\prob(X \geq \lambda) \leq \frac{\EX}{\lambda}$$
+\end{proposition}
+\begin{proof}
+			Par construction, on a $X  \geq \lambda \times 1_{\{X \geq \lambda\}}$. Donc par intégration :
+			$$\int_{\Omega}^{} X d\prob \geq \lambda \int_{\Omega}^{} 1_{\{X \geq \lambda\}} d\prob = \lambda \prob(X \geq \lambda)$$
+			d'où le résultat.
+\end{proof}
+		
+\begin{proposition}{Inégalité de Bienaymé-Tchebychev}{}
+			Soit $X$ une variable aléatoire admettant un moment d'ordre 1 et 2. On note $\mu = \EX$ et $\sigma = \sqrt{V(X)}$. Alors pour tout réel $\lambda >0$, 
+			$$\prob\left(|X-\mu| \geq \lambda \right) \leq \frac{\sigma^2}{\lambda^2}$$
+\end{proposition}
+\begin{proof}
+			On pose $Y=(X-\mu)^2$ : c'est une variable aléatoire positive, on applique l'inégalité de Markov à $Y$ et $\lambda^2 >0$ :
+			$$\prob(Y \geq \lambda^2) \leq \frac{\mathbb{E}(Y)}{\lambda^2}$$
+			Or $\mathbb{E}(Y)=V(X)=\sigma^2$ par définition de la variance. De plus, $(X-\mu)^2 \geq \lambda^2 \iff |X-\mu| \geq \lambda$ car $\lambda >0$, d'où le résultat.
+\end{proof}
+		
+
+\subsection{Différents types de convergence}
+		
+Comme pour les suites de fonctions, il existe différents types de convergence pour une suite de variables aléatoires.
+		
+La première est celle qui se rapproche de la convergence simple :
+		
+		\begin{definition}{}{}
+			Une suite de variable aléatoires $(X_n)$ converge \trouer{presque sûrement} vers une variable $X$ si 
+			$$\prob\left(\{\omega \in \Omega \, , \, \lim_{n \to +\infty} X_n(\omega) = X(\omega)\} \right) = 1$$
+		\end{definition}
+	
+	\begin{exemple}{}{}
+Soit $(X_k)$ une suite de variables aléatoires suivant une loi de Bernoulli $\mathcal{B}(p_k)$ et soit $(T_n)$ la suite de variables aléatoires définies par $T_n=\sum_{k=0}^n \frac{1}{2^k}T_k$. Alors pour tout $\omega \in \Omega$, $\lim_{n \to +\infty}T_n(\omega) = \sum_{k=0}^{+\infty} \frac{1}{2^k}T_k(\omega)$, cette série étant bien définie car $T_k(\omega) \in [0;1]$. On en déduit que la suite $(T_n)$ converge presque sûrement.
+\end{exemple}
+
+\begin{proposition}{}{}
+	Soit $(X_n)$ une suite de variable aléatoires, $X$ une variable aléatoire telle que la suite $(X_n)$ converge presque sûrement vers $X$. Soit $h$ une fonction continue. Alors la suite $(h(X_n))$ converge presque sûrement vers $h(X)$.
+\end{proposition}
+\begin{proof}
+	Par continuité de $h$, on a $$\{\omega \in \Omega \, , \, \lim_{n \to +\infty} X_n(\omega) = X(\omega)\} \subset \{\omega \in \Omega \, , \, \lim_{n \to +\infty} h(X_n(\omega)) = h(X(\omega))\}.$$ Or la probabilité de l'événement de gauche est 1, donc celle de l'événement de droite est aussi 1.
+\end{proof}
+
+
+\begin{definition}{}{}
+	Une suite de variable aléatoires $(X_n)$ converge \trouer{en probabilité} vers une variable $X$ si pour tout $\varepsilon >0$, on a 
+	$$\lim_{n \to +\infty} \prob\left(|X_n-X| \leq \varepsilon \right) = 1$$
+\end{definition}
+
+\begin{exemple}{}{}
+Soit $(X_k)$ une suite de variables aléatoires suivant une loi de Bernoulli $\mathcal{B}(p_k)$ telle que $\lim\limits_{k \to +\infty} p_k = 0$. Alors la suite $(X_k)$ converge en probabilité vers la variable aléatoire nulle. En effet, si $\varepsilon \in ]0;1[$, alors $\prob(|X_k-0| \leq \varepsilon) = 1-p_k$ et $\lim\limits_{k \to +\infty} 1-p_k = 1$. Si $\varepsilon \in [1;+\infty[$ alors  $\prob(|X_k-0| \leq \varepsilon) = 1$.
+\end{exemple}
+
+\begin{proposition}{}{}
+	Soit $(X_n)$ une suite de variable aléatoires, $X$ une variable aléatoire telle que la suite $(X_n)$ converge en probabilité vers $X$. Soit $h$ une fonction continue. Alors la suite $(h(X_n))$ converge en probabilité vers $h(X)$.
+\end{proposition}
+\begin{proof}
+	Par continuité de $h$, on a $\prob(|X_n-X| \leq \varepsilon) \leq \prob(|h(X_n)-h(X)| \leq \varepsilon')$ où $\varepsilon' = \sup_{|x-y| \leq \varepsilon} |h(x)-h(y)|$. Or $\lim\limits_{n \to +\infty} \prob(|X_n-X| \leq \varepsilon) = 1$ donc $\lim\limits_{n \to +\infty} \prob(|h(X_n)-h(X)| \leq \varepsilon') = 1$.
+\end{proof}
+
+\begin{definition}{}{}
+	Une suite de variable aléatoires $(X_n)$ converge \trouer{en loi} vers une variable $X$ si pour toute fonction continue bornée $h$, on a 
+	$$\lim_{n \to +\infty} \mathbb{E}(h(X_n)) = \mathbb{E}(h(X)) $$
+\end{definition}
+
+\begin{theoreme}{Lévy}{}
+	Soit $(X_n)$ une suite de variable aléatoires telle que $\lim\limits_{n \to +\infty} \phi_{X_n}(t) = \phi(t)$ pour tout $t \in \R$. Si $\phi$ est continue en $0$ alors il existe une variable aléatoire $X$ telle $\phi$ est la fonction caractéristique de $X$ et la suite $(X_n)$ converge en loi vers $X$.
+\end{theoreme}
+	
+\begin{proposition}{}{convloi}
+		Soit $(X_n)$ une suite de variable aléatoires, $X$ une variable aléatoire. On note $F_Y$ la fonction de répartition d'une variable $Y$ et $\phi_Y$ sa fonction caractéristique. Alors les trois propositionositions suivantes sont équivalentes :
+		\begin{enumerate}
+			\item $X_n \xrightarrow[]{\text{en loi}}X$
+			\item pour tout $t$ où $F_X$ est continue, 		$$F_{X_n}(t) \xrightarrow[n\to+\infty]{} F_X(t)$$
+			\item pour tout $t$ réel, 		$$\phi_{X_n}(t) \xrightarrow[n\to+\infty]{} \phi_X(t)$$
+		\end{enumerate}
+	
+		Si  les variables $(X_n)$ et $X$ sont des variables discrètes avec $X_n(\Omega) = X(\Omega) = \{x_k \, , \, k \in \N\} $ alors 
+	
+	$$ X_n \xrightarrow[]{\text{en loi}}X \iff \forall k, \, \prob(X_n=x_k) \xrightarrow[n\to+\infty]{} \prob(X=x_k)$$
+\end{proposition}
+
+Attention, la convergence en loi n'implique pas la convergence des fonctions densités. L'implication inverse est vraie :
+
+\begin{proposition}{}{}
+	Si  les variables $(X_n)$ et $X$ admettent des densité $f_{X_n}$ et $f_X$ et si la suite de fonctions $(f_{X_n})$ converge presque partout vers la fonction $f_X$, alors 
+	
+	$$ X_n \xrightarrow[]{\text{en loi}}X$$
+\end{proposition}
+
+\begin{theoreme}{Slutsky}{}
+	Soit $(X_n)$ et $(Y_n)$ deux suites de variables aléatoires. On suppose que $X_n \xrightarrow[]{\text{en loi}}X$ et $Y_n \xrightarrow[]{\text{en proba.}}c$ où $c$ est une constante. Alors :
+	\begin{enumerate}
+		\item $X_n+Y_n \xrightarrow[]{\text{en loi}}X+c$
+		\item $X_nY_n \xrightarrow[]{\text{en loi}}cX$
+		\item si $c \neq 0$, $\frac{X_n}{Y_n} \xrightarrow[]{\text{en loi}}\frac{X}{c}$
+	\end{enumerate}
+\end{theoreme}
+
+Ce théorème est notamment utile pour déterminer un intervalle de confiance asymptotique pour une estimation de paramètre. 
+		
+\begin{exemple}{}{}
+Soit $(X_n)$ une suite de variables aléatoires suivant une loi exponentielle $\mathcal{E}(\lambda_n)$. 
+
+\begin{description}
+\item[1er cas : ] on suppose que $\lim\limits_{n \to \infty} \lambda_n= \lambda >0$. 
+
+Soit $\phi$ une fonction continue bornée. On a $\mathbb{E}(\phi(X_n)) = \int_0^{+\infty} \lambda_n e^{-\lambda_n x}\phi(x)dx$. Il existe un intervalle $[a;b]$ et un rang $n_0$ à partir duquel $\lambda_n \in [a;b]$ de sorte que pour tout $n \geq n_0$ et tout $x \geq 0$ : $$|\lambda_n e^{-\lambda_n x}\phi(x)| \leq ||\phi||_{\infty}be^{-ax} =: h(x)$$
+La fonction $h$ est intégrable sur $[0;+\infty[$ donc par convergence dominée, 
+$$\lim_{n \to +\infty} \mathbb{E}(\phi(X_n)) = \int_0^{+\infty} \lambda e^{-\lambda x}\phi(x)dx = \mathbb{E}(\phi(Y))$$
+où $Y$ suit une loi exponentielle $\mathcal{E}(\lambda)$. On a donc convergence en loi de la suite $(X_n)$ vers la loi $\mathcal{E}(\lambda)$.
+\item[2ème cas : ] on suppose que $\lim\limits_{n \to \infty} \lambda_n= +\infty$. 
+
+Soit $\phi$ une fonction continue bornée. Par changement de variable, on a $$\mathbb{E}(\phi(X_n)) = \int_0^{+\infty}  e^{- u}\phi(u/\lambda_n)du$$
+ Par continuité de $\phi$, $\lim\limits_{n \to +\infty} \phi(u/\lambda_n) = \phi(0)$. De plus,
+
+$$|e^{-u}\phi(u/\lambda_n)| \leq ||\phi||_{\infty}e^{-u} =: h(u)$$
+La fonction $h$ est intégrable sur $[0;+\infty[$  donc par convergence dominée, 
+$$\lim_{n \to +\infty} \mathbb{E}(\phi(X_n)) = \phi(0) = \mathbb{E}(\phi(Y))$$
+où $Y=0$. On a donc convergence en loi de la suite $(X_n)$ vers $0$.
+
+\item[3ème cas : ] $\lim\limits_{n \to \infty} \lambda_n= 0$. Supposons que la suite $(X_n)$ converge en loi vers la loi d'une variable $X$. D'après le théorème précédent, on aurait la convergence simple de la suite des fonctions caractéristiques $\phi(X_n)$ vers $\phi(X)$. 
+
+Or pour tout $n \in \mathbb{N}$ et $t \in \mathbb{R}$, $\phi(X_n)(t) = \frac{\lambda_n}{\lambda_n-it}$ donc $\lim_{n \to +\infty} \phi(X_n) = \textbf{1}_{\{0\}}$. Or les fonctions caractéristiques sont continues sur $\mathbb{R}$, donc par l'absurde, la suite  $(X_n)$ ne converge pas en loi.
+
+\end{description}
+\end{exemple}
+
+
+
+
+
+
+		
+\begin{proposition}{}{convpsprobaloi}
+Soit $(X_n)$ une suite de variable aléatoires, $X$ une variable aléatoire. 
+			
+$$  \left( X_n \xrightarrow[]{\text{p. s.}}X \right)\Longrightarrow \left( X_n \xrightarrow[]{\text{en proba.}}X \right) \Longrightarrow \left( X_n \xrightarrow[]{\text{en loi}}X \right) $$
+\end{proposition}
+	
+		\begin{proof}%Lille Suquet chap8
+			\underline{p.s. $\implies$ en proba.} : 
+		Soit $\varepsilon>0$ et $A_k = \bigcap_{n \geq k} \{|X_n-X|< \varepsilon \}$ puis
+		$$\Omega_{\varepsilon}'= \bigcup_{k \in \mathbb{N}^*} A_k$$
+		Par hypothèse, puisque $\left( X_n \xrightarrow[]{\text{p. s.}}X \right)$, alors l'événement $\Omega' = (\{\omega \in \Omega \, , \, \lim_{n \to +\infty} X_n(\omega) = X(\omega)\}$ est de probabilité 1. Or $\Omega' \subset \Omega_{\varepsilon}'$ donc $\Omega_{\varepsilon}'$ a pour probabilité 1.
+		
+		Par continuité croissante, on en déduit que $\lim\limits_{k \to +\infty}\prob(A_k) = 1$ : pour tout $\delta >0$, il existe $k_1$ tel que pour tout $n \geq k_1$, $\prob(A_{n}) > 1-\delta$. Or pour tout  $n \geq k_1$, $A_{k_1} \subset \{|X_n-X|<\varepsilon \}$ donc $\prob(|X_n-X| \geq \varepsilon) < \delta$. 
+		
+		On a donc montré que $\lim\limits_{n \to +\infty} \prob(|X_n-X| \geq \varepsilon) = 0$. Ceci étant vrai pour tout $\varepsilon >0$, on a par définition la convergence en probabilité de $(X_n)$ vers $X$.
+		
+		\underline{en proba. $\implies$ en loi}
+		
+		Supposons maintenant qu'on a la convergence en probabilité. Soit $\epsilon >0$ quelconque : on remarque tout d'abord que pour tout $n \in \N$ et $t \in \R $ :
+		$$\{X_n \leq t\} \subset \{ X \leq t+\epsilon \} \cup \{ X>t+\epsilon , X_n \leq t  \}$$
+		de sorte que $\prob(X_n \leq t) \leq \prob(X \leq t + \epsilon) + \prob(|X-X_n|> \epsilon)$. En remplaçant $t$ par $t-\epsilon$, on montre que  $\prob(X \leq t-\epsilon) \leq \prob(X_n \leq t) + \prob(|X-X_n|> \epsilon)$. 
+		
+		Soit $t \in \R$ tel que la fonction de répartition $F_X$ est continue en $t$.  Soit $\varepsilon' >0$, il existe $\varepsilon>0$ tel que 
+		$$|\prob(X \leq t + \varepsilon) - \prob(X \leq t)| < \varepsilon' \text{ et } |\prob(X \leq t - \varepsilon) - \prob(X \leq t)| < \varepsilon'$$
+		Par hypothèse, il existe un rang $N$ à partir duquel si $n \geq N$, alors $\prob(|X_n-X| > \varepsilon) < \varepsilon'$. Ainsi, pour tout $n \geq N$, $$|\prob(X_n \leq t) - \prob(X \leq t)| < 2\varepsilon'$$
+		
+		On vient de montrer que la suite des fonctions de répartitions $(F_{X_n})$ converge simplement vers $F_X$ en tout point de continuité de $F_X$. Donc d'après le théorème \ref{th:convloi} on conclut la convergence en loi de $(X_n)$.
+		\end{proof}
+		
+\subsection{Approximation d'une loi binomiale par une loi de Poisson}
+		
+\begin{proposition}{}{}
+			Soit $(X_n)$ une suite de variables aléatoires réelles. On suppose que pour tout $n \in \N $, $X_n$ suit une loi binomiale $\mathcal{B}(n,p_n)$ et que la suite $(np_n)$ converge vers un réel $\lambda >0$. Alors $$ X_n \xrightarrow[]{\text{en loi}}X $$ où  $X$ suit une loi de Poisson $\mathcal{P}(\lambda)$.
+\end{proposition}
+		
+		En pratique, on approchera une loi binomiale  $\mathcal{B}(n,p)$ par une loi de Poisson $\mathcal{P}(\lambda)$ lorsque :
+		
+		\begin{itemize}
+			\item $\lambda = np$
+			\item $n \geq 30$
+		%	\item $np(1-p) \leq 10$
+			\item $p \leq 0{,}1$
+		\end{itemize}
+		
+
+		
+		
+\subsection{Théorème central limite}
+		
+\begin{theoreme}{Théorème central limite}{}
+			Soit $X$ une variable aléatoire réelle admettant une espérance $\mu$ et une variance $\sigma^2$. Soit $(X_n)$ une suite de variables aléatoires indépendantes suivant la même loi que $X$. On pose 
+			$$S_n=\sum_{k=1}^n X_k$$
+			
+			Alors on a la convergence en loi 
+			
+			$$\frac{S_n-n\mu}{\sigma \sqrt{n}}  \xrightarrow[n \to +\infty]{\text{en loi}}Z$$
+			
+			où $Z$ est une variable aléatoire suivant une loi $\mathcal{N}(0,1)$.
+		\end{theoreme}
+	
+
+	
+
+		
+\paragraph{Quelques remarques :}
+			\begin{enumerate}
+				\item En pratique, le théorème central limite permet d'approcher (quand $n$ est grand) la probabilité :
+				
+				$$\prob\left(a \leq \frac{S_n-n\mu}{\sigma \sqrt{n}} \leq b  \right) \approx \prob(a \leq Z \leq b)$$ que l'on peut calculer par exemple à l'aide des tables de valeurs de la loi normale centrée réduite.
+				\item Une autre interprétation est que la variable $S_n$ suit approximativement (quand $n$ est grand) une loi normale $\mathcal{N}(n\mu,\sigma\sqrt{n})$ de moyenne $n\mu$ et d'écart type $\sigma\sqrt{n}$.
+			\item La variable $\frac{S_n-n\mu}{\sigma \sqrt{n}}$ est centrée et réduite : en effet, $\mathbb{E}(S_n) = n\mu$ et $V(S_n) = n \sigma^2$.
+			\end{enumerate}
+
+	
+		
+		Un cas particulier du théorème central limite est le théorème de Moivre-Laplace, permettant d'approcher une loi binomiale par une loi normale :
+		
+\begin{theoreme}{Moivre-Laplace}
+			Soit $(S_n)$ une suite de variables aléatoires suivant une loi binomiale $\mathcal{B}(n,p)$. Alors 
+			$$\frac{S_n-np}{\sqrt{np(1-p)}}  \xrightarrow[n \to +\infty]{\text{en loi}}Z$$
+			où $Z$ est une variable aléatoire suivant une loi $\mathcal{N}(0,1)$.
+		\end{theoreme}
+		
+
+		\paragraph{Correction de continuité}
+		
+		Cette approximation génère des erreurs. Ce passage du discret (valeur $k$ entière) au continu (intervalle de nombres réels) peut être amélioré à l'aide du principe suivant : 
+		
+		$$\prob(S_n=k) \approx \prob\left(k-\frac{1}{2} \leq Z \leq k+\frac{1}{2}\right)$$
+		
+		\begin{exemple}{}{}
+			Soit $X$ une variable aléatoire suivant une loi binomiale $\mathcal{B}(50;0.5)$. On peut calculer directement 
+			$$\prob(X=24)+\prob(X=25)+\prob(X=26) \approx 0.3282$$
+			ou bien utiliser le théorème de Moivre-Laplace : $X$ peut être approchée par une variable aléatoire $Z$ qui suit une loi normale $\mathcal{N}(\mu,\sigma)$ où $\mu = np = 50 \times 0.5 = 25$ et $\sigma=\sqrt{np(1-p)} = \sqrt{50 \times 0.5 \times 0.5} \approx 3.53$
+			et on calcule 
+			$$\prob(23.5 \leq Z \leq 26.5) \approx 0.3291$$
+			(on remarque que sans la correction de continuité, on a une plus mauvaise approximation puisque $\prob(24 \leq Z \leq 26) \approx 0.223$).
+		\end{exemple}
+	
+		\subsection{Loi des grands nombres}
+\begin{theoreme}{Loi faible des grands nombres}{}
+	Soit $X$ une variable aléatoire  admettant une espérance $\mu$ et une variance $\sigma^2$. Soit $(X_n)$ une suite de variables aléatoires indépendantes suivant la même loi que $X$. On pose 
+	$$T_n=\frac{1}{n} \sum_{k=1}^n X_k$$
+	Alors on a la convergence en probabilité de la suite $(T_n)$ vers la variable aléatoire constante $\mu$ : 
+	
+	$$ T_n \xrightarrow[n \to +\infty]{\text{en proba.}} \mu$$
+\end{theoreme}
+\begin{proof}
+On exprime la variance de $T_n$ en utilisant l'indépendance des variables $(X_k)$ :
+$$\sigma^2(T_n) = \frac{\sigma^2}{n}$$
+On applique l'inégalité de Bienaymé-Tchebychev à $T_n$ en fixant $\epsilon >0$ : 
+$$\prob(|T_n-\mu| \geq \epsilon) \leq \frac{\sigma^2}{n \epsilon^2}  \xrightarrow[n \to +\infty]{} 0$$
+\end{proof}
+
+Ce théorème résume intuitivement l'idée que la moyenne empirique observée sur un échantillon de taille $n$ est proche de la moyenne théorique $\mu$ lorsque $n$ est grand. Plus précisément, ce théorème dit que la probabilité que la moyenne observée soit proche à epsilon près de la moyenne théorique tend vers 1 quand $n$ tend vers l'infini. 
+
+\begin{theoreme}{Loi forte des grands nombres de Kolmogorov}
+	Soit $X$ une variable aléatoire  admettant une espérance $\mu$. Soit $(X_n)$ une suite de variables aléatoires indépendantes suivant la même loi que $X$. On pose 
+	$$T_n=\frac{1}{n} \sum_{k=1}^n X_k$$
+	Alors on a la convergence  presque sûre de la suite $(T_n)$ vers la variable aléatoire constante $\mu$ : 
+	
+	$$ T_n \xrightarrow[n \to +\infty]{\text{p. s.}} \mu$$
+\end{theoreme}
+\begin{proof}
+Ce résultat est admis.
+\end{proof}
+
+
+\section{Méthode de Monte Carlo}
+\subsection{Principe général}
+Le but de la méthode est de calculer une quantité $I$. On choisit une variable aléatoire $X$ telle que $\EX = I$ puis on définit une suite $(X_i)$ de variables i.i.d. selon la loi de $X$. 
+
+Si on sait simuler les variables $X_1,X_2,...$ alors d'après la loi des grands nombres, si $N$ est <<grand>>, on a l'approximation 
+$$I \approx \frac{X_1+X_2+...+X_N}{N}$$
+
+\subsection{Approximation d'une intégrale par calcul simple}
+On souhaite calculer une intégrale que l'on met sous la forme 
+$$I=\int g(x)f(x)dx$$
+où $f$ est une fonction positive telle que $\int f(x)dx = 1$.
+
+Soit $X$ une variable aléatoire admettant $f$ pour densité. Alors d'après le théorème de transfert, 
+$$I = \mathbb{E}(g(X))$$
+Puis on approche cette espérance par une réalisation de $\frac{1}{N} \sum\limits_{i=1}^N g(X_i)$ pour $N$ suffisamment grand. Cette technique est particulièrement efficace pour des calculs en grande dimension ($x \in \mathbb{R}^n$). 
+
+Soit $I' = \int_{a}^{b} g(x)dx$ une intégrale d'une variable réelle à calculer. Soit $X$ une variable aléatoire suivant une loi uniforme sur $[a;b]$. Alors 
+$$\mathbb{E}(g(X)) = \int_{\mathbb{R}}^{} g(x) \frac{1}{b-a} 1_{[a;b]}(x)dx = \frac{1}{b-a}\int_a^b g(x)dx$$
+On approche donc l'intégrale $I'$ par une réalisation de $\frac{b-a}{N} \sum\limits_{i=1}^N g(X_i)$.
+
+\subsection{Approximation d'une intégrale par rejet}
+L'idée de la méthode est basée sur la situation suivante : on souhaite approcher la superficie $x$ d'un lac que l'on encadre au sein d'un rectangle dont on peut calculer l'aire $A$. On tire $N$ boulets de canons au hasard dans le rectangle et on recense le nombre $p$ de boulets tombés dans le lac. Ainsi, on estime la fraction d'aires $\frac{x}{A}$ par la propositionortion de boulets tombés dans le lac $\frac{p}{N}$.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{lac}
+	\caption{Estimation de la superficie d'un lac (source image : Wikipedia)}
+	\label{fig:lac}
+\end{figure}
+
+\paragraph{Méthode du rejet en dimension 2}
+Soit $h \colon [a;b] \to \mathbb{R}^+$ une fonction réelle  positive et majorée par $M>0$ dont on cherche à calculer l'intégrale $I$. Alors 
+$$I=\int_a^b h(x)dx = \iint_{[a;b] \times [0;M]} 1_A(x,y)dxdy$$
+où $A = \{(x,y)\in \R^2 \, \mid \, (x,y) \in [a;b]\times [0;M], y \leq h(x)\}$.
+
+Si $(X,Y)$ suit une loi uniforme sur  le rectangle $[a;b]\times [0;M]$ , alors $$\prob((X,Y)\in A) = \frac{1}{(b-a)M} \iint_{[a;b] \times [0;M]} 1_A(x,y)dxdy =  \frac{I}{(b-a)M}$$
+
+Or $\prob((X,Y)\in A) = \mathbb{E}(1_A)$ et d'après la loi des grands nombres, cette quantité peut être approchée par une réalisation de $\frac{1}{N}\sum_{i=1}^N Y_i$ où $Y_i$ suit la loi de $1_A$ : concrètement, $Y_i(\omega)= 1$ si $(X(\omega),Y(\omega)) \in A$, $Y_i(\omega)= 0$ sinon. En résumé, le calcul approché de $I$ par cette méthode s'obtient après exécution de l'algorithme suivant :
+
+\begin{algorithmic}
+	\REQUIRE $N$ grand, fonction $h$
+	\STATE{$c$ prend la valeur $0$}
+	\FOR{$i = 1$ à $N$}
+	\STATE{tirer $X$ uniformément sur $[a;b]$}
+	\STATE{tirer $Y$ uniformément sur $[0;M]$}
+	 \IF{$Y \leq h(X)$}
+	 \STATE{$c=c+1$}
+	 \ENDIF
+	\ENDFOR
+	\ENSURE $\frac{c(b-a)M}{N}$
+\end{algorithmic}
+
+Cette méthode se généralise en dimension $d$ en remplaçant le rectangle $[a;b]\times [0;M]$ par un volume $V$ de $\R^d$ dont on connaît la mesure. 
+
+\subsection{Convergence et précision de la méthode}
+
+On approche $I=\int_a^b h(x)dx$ par la quantité réalisée $I_n = \frac{b-a}{N}\sum_{i=1}^N h(X_i)$ où les variables $(X_i)$ sont i.i.d. selon une loi uniforme sur $[a;b]$. On suppose que $h$ est positive et majorée par $M$. 
+
+D'après la loi forte des grands nombres, $\prob(I_n   \xrightarrow[n \to +\infty]{} I ) = 1$. 
+
+On note $\mu = \mathbb{E}(h(X_i))$ et $\sigma^2 = V(h(X_i))$. Alors $\mu = \frac{I}{b-a}$ et $$\sigma^2 = \mathbb{E}(h(X_i)^2)-\mu^2 \leq \mathbb{E}(h(X_i)^2) \leq \frac{1}{b-a}\int_a^b h(x)^2 dx \leq M^2$$
+
+Donc $\mathbb{E}(I_n) = (b-a) \mu = I$ et $V(I_n) = \frac{(b-a)^2}{N} \sigma^2$. D'après le Théorème Central Limite, la variable $Z=\dfrac{I_n-I}{\frac{(b-a)\sigma}{\sqrt{n}}}$ converge en loi de vers une loi normale centrée réduite. 
+
+Pour un risque $\alpha \in [0;1]$ fixé, on choisi $u_{\alpha/2}>0$ tel que $$\prob(|Z|>u_{\alpha/2}) = \alpha$$
+
+Pour $\alpha = 5\%$, on a $u_{\alpha/2} \approx 1{,}96$. 
+
+Ainsi, avec une probabilité de $1-\alpha = 95\%$, on a la majoration 
+$$|I_n-I| \leq \frac{1{,96}M(b-a)}{\sqrt{n}}$$
+
+A condition de pouvoir estimer la valeur de $M$, on peut ainsi calculer la taille de l'échantillon $n$ nécessaire pour obtenir une certaine précision.

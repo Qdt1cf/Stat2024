@@ -1,0 +1,50 @@
+\babel@toc {french}{}\relax 
+\babel@toc {french}{}\relax 
+\contentsline {chapter}{\numberline {1}Prérequis sur les VA absolument continues}{5}{chapter.1}%
+\contentsline {chapter}{\numberline {2}\'Echantillonnage et estimation de paramètres}{7}{chapter.2}%
+\contentsline {section}{\numberline {I}Construction de nouvelles lois}{7}{section.2.1}%
+\contentsline {subsection}{\numberline {1}Somme de lois normales}{7}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2}Loi du Chi-deux}{8}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {3}Loi de Student}{9}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {4}Loi de Fisher}{10}{subsection.2.1.4}%
+\contentsline {section}{\numberline {II}\'Echantillon aléatoire et estimateur ponctuel}{11}{section.2.2}%
+\contentsline {subsection}{\numberline {1}Définition}{11}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2}Estimateurs ponctuels}{11}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {3}Propriétés attendues}{12}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {4}Moyenne empirique}{12}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {5}Variance empirique}{13}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {6}Fréquence}{14}{subsection.2.2.6}%
+\contentsline {subsection}{\numberline {7}Résumé sur les estimateurs usuels}{14}{subsection.2.2.7}%
+\contentsline {section}{\numberline {III}Estimation par maximum de vraisemblance}{14}{section.2.3}%
+\contentsline {subsection}{\numberline {1}Fonction de vraisemblance pour une loi discrète}{15}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2}Fonction de vraisemblance pour une loi continue}{15}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {3}Optimiser la vraisemblance}{15}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {4}Exemple : estimer le paramètre d'une loi de Bernoulli}{16}{subsection.2.3.4}%
+\contentsline {section}{\numberline {IV}Estimation par intervalle de confiance}{16}{section.2.4}%
+\contentsline {subsection}{\numberline {1}Démarche générale}{16}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2}Intervalle de confiance asymptotique}{17}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {3}Intervalle de confiance asymptotique d'une proportion}{17}{subsection.2.4.3}%
+\contentsline {paragraph}{Estimateur utilisé :}{17}{subsection.2.4.3}%
+\contentsline {paragraph}{Loi de l'estimateur utilisée :}{17}{subsection.2.4.3}%
+\contentsline {paragraph}{Calcul d'un intervalle de confiance asymptotique :}{17}{subsection.2.4.3}%
+\contentsline {paragraph}{Modification de l'intervalle avec des données connues :}{18}{subsection.2.4.3}%
+\contentsline {paragraph}{En pratique :}{18}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {4}Intervalle de confiance d'une moyenne}{18}{subsection.2.4.4}%
+\contentsline {paragraph}{Estimateur utilisé :}{18}{subsection.2.4.4}%
+\contentsline {paragraph}{Loi de l'estimateur utilisé :}{18}{subsection.2.4.4}%
+\contentsline {paragraph}{Calcul d'un intervalle de confiance pour cette loi :}{18}{Item.17}%
+\contentsline {subsection}{\numberline {5}Intervalle de confiance d'une moyenne, l'écart-type est inconnu}{19}{subsection.2.4.5}%
+\contentsline {paragraph}{Estimateur utilisé :}{19}{subsection.2.4.5}%
+\contentsline {paragraph}{Loi de l'estimateur utilisé si la loi mère a une distribution normale :}{19}{subsection.2.4.5}%
+\contentsline {paragraph}{Calcul d'un intervalle de confiance pour cette loi :}{19}{subsection.2.4.5}%
+\contentsline {paragraph}{Loi de l'estimateur utilisée si la loi mère a une distribution quelconque et $n$ est grand :}{19}{subsection.2.4.5}%
+\contentsline {paragraph}{Si la loi mère a une distribution quelconque et que l'échantillon n'est pas de grande taille $n$ :}{19}{subsection.2.4.5}%
+\contentsline {subsection}{\numberline {6}Intervalle de confiance d'une variance}{20}{subsection.2.4.6}%
+\contentsline {paragraph}{Estimateur utilisé :}{20}{subsection.2.4.6}%
+\contentsline {paragraph}{Loi de l'estimateur utilisé si la loi mère a une distribution normale :}{20}{subsection.2.4.6}%
+\contentsline {chapter}{\numberline {A}Compétences attendues à l'issue de ce cours}{21}{chapter.1}%
+\contentsline {section}{\numberline {I}Échantillonnage}{21}{section.1.1}%
+\contentsline {chapter}{\numberline {B}Tables de valeurs}{23}{chapter.2}%
+\contentsline {section}{\numberline {I}Tables de la Loi Normale Centrée Réduite.}{23}{section.2.1}%
+\contentsline {section}{\numberline {II}Loi du $\chi ^2$}{25}{section.2.2}%
+\contentsline {section}{\numberline {III}Loi de Student}{26}{section.2.3}%

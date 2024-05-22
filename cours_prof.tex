@@ -1,0 +1,140 @@
+\documentclass[fleqn,a4paper,11pt]{book}
+\usepackage[french]{babel}
+\usepackage[autolanguage]{numprint}
+\usepackage{makecell} % pour les tableaux
+\usepackage{import}
+
+\input{preambule_general.tex}
+\input{preambule_math.tex}
+\input{preambule_book_new.tex}
+
+\usepackage{booktabs}
+\usepackage{longtable}
+
+\usetikzlibrary{decorations.pathreplacing}
+
+\geometry{hmargin=2.3cm,vmargin=2.3cm}
+
+\title{Cours de statistique inférentielle- STATINF}
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\chapter{Prérequis sur les VA absolument continues}
+Ce chapitre constitue des rappels importants de notions vues dans le cours d'AL\'EA.
+
+%\import{00/}{Cours}
+
+%\newpage
+
+%\chapter{Variables aléatoires absolument continues}
+%\import{01/}{Cours}
+
+%\newpage
+
+%\section{Exercices d'application}
+%\import{01/}{TD}
+
+%\chapter{Théorèmes limites et simulation de lois}
+%\import{02/}{Cours}
+%\newpage
+\chapter{\'Echantillonnage et estimation de paramètres}
+
+\import{03/}{Cours}
+\newpage
+
+%\section{Exercices d'application}
+%\import{02/}{TD}
+\appendix
+\chapter{Compétences attendues à l'issue de ce cours}
+
+\import{Competences/}{TD}
+
+
+
+
+\chapter{Tables de valeurs}
+\input{Tables/Cours}
+%\section{Tables de la Loi Normale Centrée Réduite.}\label{tablenormale}
+%\begin{center}
+%	
+%	$$\Phi(t)=\prob(X \leq t) = \int_{-\infty}^t\frac{1}{\sqrt{2\pi}}\ e^{-\frac{x^2}{2}}dx\ \ \mbox{ et }\ \ \Phi(-t)=1 - \Phi(t).$$
+%\begin{tikzpicture}
+%	\def\val{-0.7}
+%	\def\fval{0.3121}
+%	
+%	\begin{axis}[
+%		axis lines=middle,
+%		domain=-4:4,
+%		xtick=\empty,
+%		ytick=\empty,
+%		ymin=-0.06, ymax = 0.45,
+%		enlargelimits=false,
+%		samples=100,
+%		width=10cm,
+%		height=5cm,
+%		x label style={at={(axis description cs:1.05,0.5)},anchor=north},
+%		y label style={at={(axis description cs:0.5,1.05)},anchor=west}
+%		]
+%		
+%		\addplot[blue, thick, no markers, domain=-4:4] {exp(-x^2 / (2*1^2)) / (1*sqrt(2*pi))};
+%		
+%		\addplot[fill=yellow, domain=-4:\val] {exp(-x^2 / (2*1^2)) / (1*sqrt(2*pi))} \closedcycle;
+%		
+%		\draw[dashed, red, ->] (axis cs: -3, 0.2) -- (axis cs: -1.5, 0.05) node[at start, above, red] {$\Phi(t)$};
+%		
+%\node[below] at (axis cs: \val, 0) {$t$};
+%		
+%	\end{axis}
+%
+%\end{tikzpicture}
+%
+%
+%	Voici une table des quantiles les plus couramment utilisées :
+%	
+%	\begin{small}
+%		\begin{center}
+%			\begin{tabular}{ll}
+%				\multicolumn{1}{c}{$p$}& \multicolumn{1}{c}{$\Phi^{-1}(p)$} \\ \midrule
+%				$0.9$ & $1.2815515655$\\
+%				$0.95$ & $1.6448536270$\\
+%				$0.975$ & $1.9599639845$\\
+%				$0.99$ & $2.3263478740$\\
+%				$0.995$ & $2.5758293035$\\
+%				$0.9975$ & $2.8070337683$\\
+%				
+%				\midrule  
+%			\end{tabular}
+%			\hspace*{1.25cm}
+%			\begin{tabular}{ll}
+%				\multicolumn{1}{c}{$p$}& \multicolumn{1}{c}{$\Phi^{-1}(p)$} \\ \midrule
+%				$0.999$ & $3.0902323062$\\
+%				$0.9995$ & $3.2905267315$\\
+%				$0.99975$ & $3.4807564043$\\
+%				$0.9999$ & $3.7190164855$\\
+%				$0.99995$ & $3.8905918864$\\
+%				$0.999975$ & $4.0556269811$\\
+%				
+%				\midrule  
+%			\end{tabular}
+%			\hspace*{1.25cm}
+%			\begin{tabular}{ll}
+%				\multicolumn{1}{c}{$p$}& \multicolumn{1}{c}{$\Phi^{-1}(p)$} \\ \midrule
+%				$0.99999$ & $4.2648907939$\\
+%				$0.999995$ & $4.4171734135$\\
+%				$0.9999975$ & $4.5647877303$\\
+%				$0.999999$ & $4.7534243088$\\
+%				$0.9999995$ & $4.8916384757$\\
+%				$0.99999975$ & $5.0263128360$\\
+%				
+%				\midrule  
+%			\end{tabular}
+%		\end{center}
+%	\end{small}
+%\end{center}
+%\input{Tables/Cours}
+
+\end{document}
+
