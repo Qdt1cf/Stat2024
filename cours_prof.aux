@@ -2,6 +2,17 @@
 \providecommand\babel@aux[2]{}
 \@nameuse{bbl@beforestart}
 \providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
 \providecommand*\HyPL@Entry[1]{}
 \HyPL@Entry{0<</S/D>>}
 \babel@aux{french}{}
@@ -28,42 +39,53 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {5}Variance empirique}{13}{subsection.2.2.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {6}Fréquence}{14}{subsection.2.2.6}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {7}Résumé sur les estimateurs usuels}{14}{subsection.2.2.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {III}Estimation par maximum de vraisemblance}{14}{section.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1}Fonction de vraisemblance pour une loi discrète}{15}{subsection.2.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2}Fonction de vraisemblance pour une loi continue}{15}{subsection.2.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3}Optimiser la vraisemblance}{15}{subsection.2.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4}Exemple : estimer le paramètre d'une loi de Bernoulli}{16}{subsection.2.3.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {IV}Estimation par intervalle de confiance}{16}{section.2.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1}Démarche générale}{16}{subsection.2.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {III}Obtention d'un estimateur}{14}{section.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1}Estimation par la méthode des moments}{14}{subsection.2.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{La méthode des moments consiste à comparer les moments théoriques de la population et les moments expérimentaux. Le principe est de remarquer que les moments théoriques $\mathbb  {E}(X),\,\mathbb  {E}(X^2),\cdots  {},\mathbb  {E}(X^{p})$ peut souvent être exprimés en terme de fonctions des paramètres $\theta _1,\cdots  {},\theta _{p}.$ L'objectif est de résoudre le système suivant d'inconnue $\theta =\theta _1,\cdots  {},\theta _{p}$.}{14}{subsection.2.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2}Estimation par maximum de vraisemblance}{15}{subsection.2.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Fonction de vraisemblance pour une loi discrète}{15}{subsection.2.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Fonction de vraisemblance pour une loi continue}{16}{subsection.2.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Optimiser la vraisemblance}{16}{subsection.2.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3}Méthode des moindres carrés}{17}{subsection.2.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Estimation par intervalle de confiance}{17}{section.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1}Démarche générale}{17}{subsection.2.4.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2}Intervalle de confiance asymptotique}{17}{subsection.2.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3}Intervalle de confiance asymptotique d'une proportion}{17}{subsection.2.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Estimateur utilisé :}{17}{subsection.2.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Loi de l'estimateur utilisée :}{17}{subsection.2.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Calcul d'un intervalle de confiance asymptotique :}{17}{subsection.2.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3}Intervalle de confiance asymptotique d'une proportion}{18}{subsection.2.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Estimateur utilisé :}{18}{subsection.2.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Loi de l'estimateur utilisée :}{18}{subsection.2.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Calcul d'un intervalle de confiance asymptotique :}{18}{subsection.2.4.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Modification de l'intervalle avec des données connues :}{18}{subsection.2.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{En pratique :}{18}{subsection.2.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4}Intervalle de confiance d'une moyenne}{18}{subsection.2.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Estimateur utilisé :}{18}{subsection.2.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Loi de l'estimateur utilisé :}{18}{subsection.2.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Calcul d'un intervalle de confiance pour cette loi :}{18}{Item.17}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5}Intervalle de confiance d'une moyenne, l'écart-type est inconnu}{19}{subsection.2.4.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Estimateur utilisé :}{19}{subsection.2.4.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Loi de l'estimateur utilisé si la loi mère a une distribution normale :}{19}{subsection.2.4.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Calcul d'un intervalle de confiance pour cette loi :}{19}{subsection.2.4.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Loi de l'estimateur utilisée si la loi mère a une distribution quelconque et $n$ est grand :}{19}{subsection.2.4.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Si la loi mère a une distribution quelconque et que l'échantillon n'est pas de grande taille $n$ :}{19}{subsection.2.4.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6}Intervalle de confiance d'une variance}{20}{subsection.2.4.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Estimateur utilisé :}{20}{subsection.2.4.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Loi de l'estimateur utilisé si la loi mère a une distribution normale :}{20}{subsection.2.4.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Compétences attendues à l'issue de ce cours}{21}{chapter.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{En pratique :}{19}{subsection.2.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4}Intervalle de confiance d'une moyenne}{19}{subsection.2.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Estimateur utilisé :}{19}{subsection.2.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Loi de l'estimateur utilisé :}{19}{subsection.2.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Calcul d'un intervalle de confiance pour cette loi :}{19}{Item.17}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5}Intervalle de confiance d'une moyenne, l'écart-type est inconnu}{20}{subsection.2.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Estimateur utilisé :}{20}{subsection.2.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Loi de l'estimateur utilisé si la loi mère a une distribution normale :}{20}{subsection.2.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Calcul d'un intervalle de confiance pour cette loi :}{20}{tcb@cnt@exemple.2.4.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Loi de l'estimateur utilisée si la loi mère a une distribution quelconque et $n$ est grand :}{20}{tcb@cnt@exemple.2.4.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Si la loi mère a une distribution quelconque et que l'échantillon n'est pas de grande taille $n$ :}{21}{tcb@cnt@exemple.2.4.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6}Intervalle de confiance d'une variance}{21}{subsection.2.4.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Estimateur utilisé :}{21}{subsection.2.4.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Loi de l'estimateur utilisé si la loi mère a une distribution normale :}{21}{subsection.2.4.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {V}Tests d'hypothèses}{21}{section.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{La réalisation d'un test d'hypothèse consiste à émettre une hypothèse concernant la mesure d'un caractère sur une population donnée. On a ensuite a décidé d'accepter ou refuser cette hypothèse à partir d'un ou plusieurs échantillons. On teste systématique une hypothèse $H_0,$ dite {\it  {nulle}} versus une hypothèse $H_{1}$ dite {\it  {alternative}}. Il s'ensuit deux choix possibles: prendre la décision d'accepter $H_0$ ou de refuser $H_0$.}{21}{section.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Quand les hypothèses portent sur la valeur d'un paramètre comme l'écart-type, l'espérance ... d'une même population, on parle de test d'hypothèse {\bf  {paramétrique}}. Dans d'autres cas, quand on ne s'intéresse pas à la distribution dont est issu l'échantillon on parle de test {\bf  {non paramétrique}}.}{21}{section.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Méthodologie et Erreur de Neumann}{21}{section.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Puissance du test?}{21}{section.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1}Tests relatifs à une moyenne}{21}{subsection.2.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2}Tests relatifs à une proportion}{22}{subsection.2.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3}Tests relatifs à une variance}{22}{subsection.2.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Compétences attendues à l'issue de ce cours}{23}{chapter.1}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {I}Échantillonnage}{21}{section.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {B}Tables de valeurs}{23}{chapter.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {I}Échantillonnage}{23}{section.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {B}Tables de valeurs}{25}{chapter.2}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {I}Tables de la Loi Normale Centrée Réduite.}{23}{section.2.1}\protected@file@percent }
-\newlabel{tablenormale}{{I}{23}{Tables de la Loi Normale Centrée Réduite}{section.2.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Tables de la Loi Normale Centrée Réduite.}{25}{section.2.1}\protected@file@percent }
+\newlabel{tablenormale}{{I}{25}{Tables de la Loi Normale Centrée Réduite}{section.2.1}{}}
 \gdef \LT@i {\LT@entry 
     {5}{22.00005pt}\LT@entry 
     {5}{39.77788pt}\LT@entry 
@@ -79,7 +101,7 @@
     {5}{39.77788pt}\LT@entry 
     {5}{39.77788pt}\LT@entry 
     {1}{0.0pt}}
-\@writefile{toc}{\contentsline {section}{\numberline {II}Loi du $\chi ^2$}{25}{section.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {II}Loi du $\chi ^2$}{27}{section.2.2}\protected@file@percent }
 \gdef \LT@ii {\LT@entry 
     {5}{22.00005pt}\LT@entry 
     {5}{39.77788pt}\LT@entry 
@@ -95,5 +117,5 @@
     {5}{39.77788pt}\LT@entry 
     {1}{39.77788pt}\LT@entry 
     {1}{0.0pt}}
-\@writefile{toc}{\contentsline {section}{\numberline {III}Loi de Student}{26}{section.2.3}\protected@file@percent }
-\gdef \@abspage@last{27}
+\@writefile{toc}{\contentsline {section}{\numberline {III}Loi de Student}{28}{section.2.3}\protected@file@percent }
+\gdef \@abspage@last{29}

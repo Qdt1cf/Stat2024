@@ -319,8 +319,73 @@ On considère un $n$-échantillon $(X_1,...,X_n)$ de moyenne $\mu$ et d'écart-t
   \item[Fréquence :]  $F=\frac{1}{n}\sum_{i=1}^n X_i$, associé à une variable de Bernoulli de paramètre $p$, 
  est un estimateur de la fréquence de succès $p$, c'est un estimateur \trouer{sans biais} et \trouer{convergent}.
 \end{description}
+\section{Obtention d'un estimateur}
+\subsection{Estimation par la méthode des moments}
+\paragraph{La méthode des moments consiste à comparer les moments théoriques de la population et les moments expérimentaux. Le principe est de remarquer que les moments théoriques $\mathbb{E}(X),\,\mathbb{E}(X^2),\cdots{},\mathbb{E}(X^{p})$ peut souvent être exprimés en terme de fonctions des paramètres $\theta_1,\cdots{},\theta_{p}.$ L'objectif est de résoudre le système suivant d'inconnue $\theta=\theta_1,\cdots{},\theta_{p}$.}
+\begin{center}
+\[
+\left\{
+\begin{array}{l}
+\mathbb{E}(X)=h_{1}(\theta_1,\cdots,\theta_{p})=h_1(\theta) \\
+\mathbb{E}(X^2)=h_{2}(\theta_1,\cdots,\theta_{p})=h_2(\theta) \\
+\quad \vdots \\
+\mathbb{E}(X^p)=h_{p}(\theta_1,\cdots,\theta_{p})=h_p(\theta). \\
+\end{array}
+\right.
+\]
+\end{center}
+Quand c'est possible la résolution de ce système donne l'existence de fonctions $g_1,\cdots{},g_p$ telles que:
+\begin{center}
+\[
+\left\{
+\begin{array}{l}
+\theta_1=g_{1}(\mathbb{E}(X),\mathbb{E}(X^2),\cdots{},\mathbb{E}(X^{p})) \\
+\theta_2=g_{2}(\mathbb{E}(X),\mathbb{E}(X^2),\cdots{},\mathbb{E}(X^{p})) \\
+\quad \vdots \\
+\theta_p=g_{p}(\mathbb{E}(X),\mathbb{E}(X^2),\cdots{},\mathbb{E}(X^{p}))\\
+\end{array}
+\right.
+\]
+\end{center}
+L'id\'ee de cette stratégie est ainsi de remplacer les moments théoriques par leurs estimateurs afin d'obtenir les estimateurs des paramètres:
+\begin{center}
+\[
+\left\{
+\begin{array}{l}
+\widehat{\Theta}_1=g_{1}(\widehat{\mathbb{E}}(X),\widehat{\mathbb{E}}(X^2),\cdots{},\widehat{\mathbb{E}}(X^{p})) \\
+\widehat{\Theta}_2=g_{2}(\widehat{\mathbb{E}}(X),\widehat{\mathbb{E}}(X^2),\cdots{},\widehat{\mathbb{E}}(X^{p})) \\
+\quad \vdots \\
+\widehat{\Theta}_p=g_{p}(\widehat{\mathbb{E}}(X),\widehat{\mathbb{E}}(X^2),\cdots{},\widehat{\mathbb{E}}(X^{p}))\\
+\end{array}
+\right.
+\]
+\end{center}
+avec $\widehat{\mathbb{E}}(X^{k})=\displaystyle \frac{1}{n}\sum_{i=1}^{n}X_{i}^{k},\,\forall k=1,\cdots,p$.
+Le principal inconvénient de cette méthode est que la résolution du système par l'obtention des fonctions $g_1,\cdots{},g_p$ est laborieuse. Cependant voici un tableau récapitulatif des lois de probabilités et des estimateurs associés:\\
 
-\section{Estimation par maximum de vraisemblance}
+
+\begin{tabular}{|c|c|}
+  \hline
+  Loi & Estimateur \\
+  \hline
+  Loi 1 & Estimateur 1 \\
+  \hline
+  Loi 2 & Estimateur 2 \\
+  \hline
+  Loi 3 & Estimateur 3 \\
+  \hline
+  Loi 4 & Estimateur 4 \\
+  \hline
+  Loi 5 & Estimateur 5 \\
+  \hline
+  Loi 6 & Estimateur 6 \\
+  \hline
+  Loi 7 & Estimateur 7 \\
+  \hline
+\end{tabular}
+
+
+\subsection{Estimation par maximum de vraisemblance}
 Les estimateurs utilisés précédemment ont été construits de manière empirique. Il existe des méthodes plus globales pour construire des estimateurs, en voici une basée sur le principe suivant : on cherche un estimateur qui rend le plus probable (vraisemblable) l'échantillon observé.
 
 %\begin{figure}[h!]
@@ -330,7 +395,7 @@ Les estimateurs utilisés précédemment ont été construits de manière empiri
 %	\label{fig:exemples}
 %\end{figure}
 
-\subsection{Fonction de vraisemblance pour une loi discrète}
+\subsubsection{Fonction de vraisemblance pour une loi discrète}
 
 On considère un échantillon $X_1,...,X_n$ de variables aléatoires indépendantes suivant une loi discrète $\mathcal{L}(\theta)$ où $\theta$ est le paramètre que l'on cherche à estimer. On note $x_1,...,x_n$ une réalisation de l'échantillon. On s'intéresse à l'événement : 
 $$A = \{X_1=x_1,...,X_n=x_n\}$$
@@ -341,7 +406,7 @@ $$L(x_1,...,x_n, \theta) = \prob_\theta(A) = \prob_\theta(X_1=x_1) \times ... \t
 
 On notera que le calcul de probabilité dépend du paramètre $\theta$ que l'on cherche à estimer, puisque la loi $\mathcal{L}(\theta)$ dépend de ce paramètre.
 
-\subsection{Fonction de vraisemblance pour une loi continue}
+\subsubsection{Fonction de vraisemblance pour une loi continue}
 
 On considère un échantillon $X_1,...,X_n$ de variables aléatoires indépendantes suivant une loi continue $\mathcal{L}(\theta)$ où $\theta$ est le paramètre que l'on cherche à estimer. On note $x_1,...,x_n$ une réalisation de l'échantillon. L'événement $\{X_i=x_i\}$ étant de probabilité nulle pour une loi continue, on s'intéresse plutôt à l'événement $\{|X_i-x_i|<\varepsilon\}$. Supposons que la loi $\mathcal{L}(\theta)$ admette une densité $f_{\theta}$ : alors $\prob_{\theta}(|X_i-x_i|<\varepsilon) = \int_{x_i-\varepsilon}^{x_i+\varepsilon} f_{\theta}$. D'après le théorème de la moyenne, il existe $c \in ]x_i-\varepsilon;x_i+\varepsilon[$ tel que $f_{\theta}(c) = \frac{1}{2\varepsilon} \prob_{\theta}(|X_i-x_i|<\varepsilon)$. Par continuité, on peut écrire $f_{\theta}(c) = f_{\theta}(x_i)+\alpha_i(\varepsilon)$ où $\alpha_i(\varepsilon)$ tend vers $0$ lorsque $\varepsilon \to 0$. 
 
@@ -354,7 +419,7 @@ En faisant tendre $\varepsilon \to 0$, on définit donc la fonction de vraisembl
 
 $$L(x_1,...,x_n, \theta) = \prob_\theta(A_{\varepsilon}) = f_{\theta}(x_1) \times ... \times f_{\theta}(x_n)$$
 
-\subsection{Optimiser la vraisemblance}
+\subsubsection{Optimiser la vraisemblance}
 
 On cherche une valeur de $\theta$ telle que la vraisemblance soit maximale. Lorsque cela est possible, on cherche $\theta$ tel que 
 
@@ -369,8 +434,8 @@ ce qui peut conduire à des calculs plus simples.
 \end{definition}
 
 L'estimation $\hat{\theta}$ dépend des réalisations $x_1,...,x_n$. Pour obtenir l'estimateur $\Theta$ recherché, on remplace dans l'expression les réalisations $x_1,...,x_n$ par les variables aléatoires $X_1,...,X_n$.
-
-\subsection{Exemple : estimer le paramètre d'une loi de Bernoulli}
+\begin{exemple}{Estimer le paramètre d'une loi de Bernoulli}{}
+%\subsection{Exemple : estimer le paramètre d'une loi de Bernoulli}
 
 On considère un échantillon $X_1,...,X_n$ de variables aléatoires indépendantes suivant une loi de Bernoulli de paramètre $p$ inconnu. Soit $x_1,...,x_n$ une réalisation de cet échantillon :
 
@@ -394,6 +459,9 @@ $$\frac {\partial \ln L(x_{1},\ldots ,x_{i},\ldots ,x_{n};p )}{\partial p } = \f
 On trouve donc une valeur $\hat{p} = \frac{1}{n } \sum_{i=1}^n x_i$. On en déduit un estimateur de $p$ qui est l'estimateur de fréquence déjà connu :
 
 $$F = \frac{1}{n } \sum_{i=1}^n X_i$$
+
+\end{exemple}
+\subsection{Méthode des moindres carrés}
 
 
 \section{Estimation par intervalle de confiance}
@@ -490,6 +558,12 @@ Le calcul précédent est possible en connaissant l'écart-type $\sigma$ de la l
 d'après la définition d'une loi de Student et le théorème de Fisher (th \ref{th:th_fisher})
  $$\frac{Z}{\sqrt{\frac{\frac{(n-1)}{\sigma^2}S^2}{n-1}}}$$ suit une loi $St(n-1)$.  En remplaçant $Z$ par son expression et en simplifiant, il vient que $U=\frac{\overline{X}-\mu}{\frac{S}{\sqrt{n}}}$ suit une loi $St(n-1)$.
 
+\begin{exemple}{Estimation de la moyenne avec variance inconnue}{}
+Une expérience délicate...page 297 BOG
+
+
+\end{exemple}
+
 \paragraph{Calcul d'un intervalle de confiance pour cette loi :} De même que pour une loi normale, il existe un unique réel strictement positif $t_{\alpha/2}$ tel que 
 
 $$\prob(-t_{\alpha/2} < U < t_{\alpha/2}) = 1-\alpha$$
@@ -519,4 +593,35 @@ Remarquons que si la moyenne $\mu$ est connue, l'estimateur est
 $$\Sigma^2=\frac{1}{n}\sum_{i=1}^n (X_i-\mu)^2$$
 et on sait que $\frac{n}{\sigma^2}\Sigma^2$ suit une loi $\chi^2(n)$.
 
+\begin{exemple}{Estimation de la variance avec l'espérance inconnue}{}
+Une expérience délicate...page 297 BOG
 
+
+\end{exemple}
+
+
+\section{Tests d'hypothèses}
+\paragraph{La réalisation d'un test d'hypothèse consiste à émettre une hypothèse concernant la mesure d'un caractère sur une population donnée. On a ensuite a décidé d'accepter ou refuser cette hypothèse à partir d'un ou plusieurs échantillons. On teste systématique une hypothèse $H_0,$ dite {\it{nulle}} versus une hypothèse $H_{1}$ dite {\it{alternative}}. Il s'ensuit deux choix possibles: prendre la décision d'accepter $H_0$ ou de refuser $H_0$.}
+\paragraph{Quand les hypothèses portent sur la valeur d'un paramètre comme l'écart-type, l'espérance ... d'une même population, on parle de test d'hypothèse {\bf{paramétrique}}. Dans d'autres cas, quand on ne s'intéresse pas à la distribution dont est issu l'échantillon on parle de test {\bf{non paramétrique}}.}
+Dans la suite on s'intéressera aux tests d'hypothèses paramétriques portant en général sur un paramètre $\theta$ d'une population $\mathcal{P}$ obtenu à l'aide de valeurs numériques d'un échantillon $(x_1,\cdots{},x_n)$. 
+\paragraph{Méthodologie et Erreur de Neumann}
+
+
+\paragraph{Puissance du test?}
+
+\subsection{Tests relatifs à une moyenne}
+
+Petite taille VS Grande Taille ?
+
+
+
+
+
+\subsection{Tests relatifs à une proportion}
+
+
+
+
+
+
+\subsection{Tests relatifs à une variance}
